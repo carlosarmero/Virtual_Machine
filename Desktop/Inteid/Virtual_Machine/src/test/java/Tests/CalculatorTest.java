@@ -5,11 +5,11 @@ import PageObjects.CalculatorPage;
 import PageObjects.Home;
 import PageObjects.Search;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,10 +27,8 @@ public class CalculatorTest {
     private Search searchResultsPage;
     private CalculatorPage calculatorPage;
     private Add AddOne;
-    public static String linkToShare;
     @BeforeEach
     public void setUp() {
-        // System.setProperty("webdriver.chrome.driver", "path/to/chromedriver"); // Update path
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://cloud.google.com/");
@@ -42,33 +40,37 @@ public class CalculatorTest {
 
     @Test
     public void testCalculateEstimate() throws InterruptedException {
+        //buscar palabras
         homePage.searchFor("Google Cloud Platform Pricing Calculator");
+        //establecer espera
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        //esperar al enlace a calculadora
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Google Cloud Pricing Calculator")));
+        //click link
         searchResultsPage.selectCalculator();
+        //wait 1st add to estimate
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"ucj-1\"]/div/div/div/div/div/div/div/div[1]/div/div[1]/div/div/div/button")));
         AddOne.AddOne();
+        //esperar cuadro boton que dice compute engine
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"yDmH0d\"]/div[5]/div[2]/div/div/div/div[2]/div/div/div[1]/div/div/div/div/button")));
         AddOne.AddTwo();
+        //esperar que cargue el form
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("zv7tnb")));
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"ow6\"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[11]/div/div/div[2]/div/div[1]/div[3]/div/div/div/div[1]")));
+        //llenar form
         calculatorPage.fillComputeEngineForm();
+        //obtener cantidad
+        String cant1 = driver.findElement(By.className("fbc2ib")).getText();
+        System.out.println(cant1);
+        //intento copiar enlace
+        String clipboardText = CalculatorPage.getClipboardText();
 
-        WebElement link = driver.findElement(By.cssSelector("#yDmH0d > div.uW2Fw-Sx9Kwc.uW2Fw-Sx9Kwc-OWXEXe-vOE8Lb.uW2Fw-Sx9Kwc-OWXEXe-di8rgd-bN97Pc-QFlW2.no1KDb.uW2Fw-Sx9Kwc-OWXEXe-FNFY6c > div.uW2Fw-wzTsW > div > div > div > div.SfvQgf > div.n2q0Vd > div:nth-child(2) > button"));
-        String ff = link.getAttribute("href");
-        driver.get(ff);
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("zv7tnb")));
-        //String email = "your_temp_email@yopmail.com"; // Replace with dynamic retrieval from Yopmail
-        //calculatorPage.emailEstimate(email);
-
-        // Wait for the email to arrive (you may want to implement a more robust wait)
-        //Thread.sleep(30000); // Adjust time based on your testing needs
-
-        //String estimatedCost = calculatorPage.getTotalEstimatedCost();
-        // Here, you would check the email for the cost and compare it.
-        // This would typically require a Yopmail API or scraping for verification.
-        // Assertions.assertEquals(expectedCost, estimatedCost);
+        //cierro ventana actual
+        //driver.close();
+        driver.get(clipboardText);//<-abro cotizaciotn
+        //obtrngo  cantiddad de nueva ventana
+        String cant2 = driver.findElement(By.className("fbc2ib")).getText();
+        //verifico que sean igual
+        Assertions.assertEquals(cant1, cant2);
     }
 
     @AfterEach
@@ -88,7 +90,6 @@ public class CalculatorTest {
 
         // Save the screenshot
         ImageIO.write(screenImage, "jpg", new File(path));
-        System.out.println("Screenshot saved to " + path);
     }
     @AfterEach
 

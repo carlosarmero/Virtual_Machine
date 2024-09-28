@@ -4,6 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
+
 public class CalculatorPage {
     private WebDriver driver;
     public CalculatorPage(WebDriver driver) {
@@ -17,59 +22,47 @@ public class CalculatorPage {
         driver.findElement(By.xpath("//*[@id=\"ucj-1\"]/div/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[2]/div/div/div/div/div[2]/div[1]/div[3]/div[3]/button")).click();
         driver.findElement(By.xpath("//*[@id=\"ucj-1\"]/div/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[2]/div/div/div/div/div[2]/div[1]/div[3]/div[3]/button")).click();
         driver.findElement(By.xpath("//*[@id=\"ucj-1\"]/div/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[2]/div/div/div/div/div[2]/div[1]/div[3]/div[3]/button")).click();
-        Thread.sleep(10000);
+
         driver.findElement(By. xpath("//*[@id=\"c44\"]"));//baja---machine type
-        Thread.sleep(10000);
         driver.findElement(By.className("VfPpkd-aPP78e"));
-        Thread.sleep(15000);
+        Thread.sleep(10000);//<--si es nece¿sario el wait
         driver.findElement(By.xpath("//*[@id=\"ow6\"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[11]/div/div/div[2]/div/div[1]/div[3]/div/div/div/div[1]")).click();
+        Thread.sleep(10000);//<--si es nece¿sario el wait
         driver.findElement(By.xpath("//*[@id=\"ow6\"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[11]/div/div/div[2]/div/div[1]/div[3]/div/div/div/div[2]/ul/li[7]")).click();
-
-        // add cpus
-        //driver.findElement(By.id("c46")).sendKeys("8");
-
-        //amopunt of memory
-        //List<WebElement> options = driver.findElements(By.className("VfPpkd-YCNiv"));
-        // options.get(0).sendKeys("30");
-        //driver.findElement(By.id("c47")).sendKeys("30");
-        Thread.sleep(5000);
 
         //add gpus
         driver.findElement(By.xpath("//*[@id=\"ow6\"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[21]/div/div/div[1]/div/div/span/div/button")).click();
-        Thread.sleep(10000);
+        Thread.sleep(10000);//<--si es nece¿sario el wait
         //gpu model
         driver.findElement(By.xpath("//*[@id=\"ow6\"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[23]/div")).click();
-        Thread.sleep(5000);//*[@id="ow6"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[23]/div/div[1]/div/div/div/div[2]/ul/li[4]
         driver.findElement(By.xpath("//*[@id=\"ow6\"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[23]/div/div[1]/div/div/div/div[2]/ul/li[4]")).click();
-        Thread.sleep(5000);
 
         //region
         driver.findElement(By.xpath("//*[@id=\"ow6\"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[28]/div/div[1]/div/div")).click();
-        Thread.sleep(5000);
+        Thread.sleep(10000);//<--si es nece¿sario el wait
         driver.findElement(By.xpath("//*[@id=\"ow6\"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[28]/div/div[1]/div/div/div/div[2]/ul/li[7]")).click();
-        Thread.sleep(5000);
-        /*years
-        driver.findElement(By.className("E7Widc")).click();
-        List<WebElement> radio = driver.findElements(By.className("E7Widc"));
-        radio.get(1).sendKeys("1 year");
-        Thread.sleep(10000);*/
+
         // copar link
+        Thread.sleep(10000);
         driver.findElement(By.xpath("//*[@id=\"ow6\"]/div/div/div/div/div/div/div[2]/div[1]/div/div[4]/div[2]/div[2]/div/button")).click();
-        Thread.sleep(5000); //link2
+        Thread.sleep(10000); //link2 //*[@id="yDmH0d"]/div[6]/div[2]/div/div/div/div[2]/div[2]/div[2]/button
         driver.findElement(By.cssSelector("#yDmH0d > div.uW2Fw-Sx9Kwc.uW2Fw-Sx9Kwc-OWXEXe-vOE8Lb.uW2Fw-Sx9Kwc-OWXEXe-di8rgd-bN97Pc-QFlW2.no1KDb.uW2Fw-Sx9Kwc-OWXEXe-FNFY6c > div.uW2Fw-wzTsW > div > div > div > div.SfvQgf > div.n2q0Vd > div:nth-child(2) > button")).click();
         //obtener link
-        WebElement link = driver.findElement(By.cssSelector("#yDmH0d > div.uW2Fw-Sx9Kwc.uW2Fw-Sx9Kwc-OWXEXe-vOE8Lb.uW2Fw-Sx9Kwc-OWXEXe-di8rgd-bN97Pc-QFlW2.no1KDb.uW2Fw-Sx9Kwc-OWXEXe-FNFY6c > div.uW2Fw-wzTsW > div > div > div > div.SfvQgf > div.n2q0Vd > div:nth-child(2) > button"));
-        linkS = link.getAttribute("href");
+        String clipboardText = getClipboardText();
+        System.out.println("Text copied to clipboard: " + clipboardText);
         Thread.sleep(5000);
-
     }
 
-    public void emailEstimate(String email) {
-        driver.findElement(By.id("emailEstimate")).sendKeys(email);
-        driver.findElement(By.id("sendEmail")).click();
-    }
-
-    public String getTotalEstimatedCost() {
-        return driver.findElement(By.cssSelector(".total-cost")).getText(); // Adjust selector as needed
+    public static String getClipboardText() {
+        try {
+            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            Transferable contents = clipboard.getContents(null);
+            if (contents != null && contents.isDataFlavorSupported(DataFlavor.stringFlavor)) {
+                return (String) contents.getTransferData(DataFlavor.stringFlavor);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
