@@ -21,6 +21,7 @@ public class CalculatorPage {
         driver.findElement(By. xpath("//*[@id=\"c44\"]"));//baja---machine type
         Thread.sleep(10000);
         driver.findElement(By.className("VfPpkd-aPP78e"));
+        Thread.sleep(15000);
         driver.findElement(By.xpath("//*[@id=\"ow6\"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[11]/div/div/div[2]/div/div[1]/div[3]/div/div/div/div[1]")).click();
         driver.findElement(By.xpath("//*[@id=\"ow6\"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[11]/div/div/div[2]/div/div[1]/div[3]/div/div/div/div[2]/ul/li[7]")).click();
 
