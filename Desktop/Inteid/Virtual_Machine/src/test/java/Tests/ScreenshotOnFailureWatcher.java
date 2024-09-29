@@ -1,5 +1,7 @@
 package Tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
 
@@ -11,10 +13,14 @@ import java.io.IOException;
 
 public class ScreenshotOnFailureWatcher implements TestWatcher {
 
+    static Logger log = (Logger) LogManager.getLogger("ScreenshotOnFailureWatcher.class");
+
     @Override
     public void testFailed(ExtensionContext context, Throwable cause) {
        // System.out.println("Test failed: " + context.getDisplayName() + " - " + cause.getMessage());
-        try {
+        try
+        {
+            log.error("Test failed: " + context.getDisplayName() + " - " + cause.getMessage());
             takeScreenshot();
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,0 +1,59 @@
+15:20:25.809 [main] DEBUG CalculatorTest.class - DEBUG: for gods sake
+15:20:25.852 [main] INFO  CalculatorTest.class - no sesion
+15:23:34.980 [main] DEBUG CalculatorTest.class - DEBUG: for gods sake
+15:23:35.027 [main] INFO  CalculatorTest.class - no sesion
+15:25:44.736 [main] DEBUG CalculatorTest.class - DEBUG: for gods sake
+15:25:44.784 [main] INFO  CalculatorTest.class - no sesion
+15:31:42.204 [main] INFO  CalculatorTest.class - no sesion
+15:42:38.361 [main] DEBUG CalculatorTest.class - DEBUG: for gods sake
+15:42:38.469 [main] INFO  CalculatorTest.class - no sesion
+15:42:38.536 [main] INFO  ScreenshotOnFailureWatcher.class - Test failed: testCalculateEstimate() - no such element: Unable to locate element: {"method":"css selector","selector":"#yDmH0d > div.uW2Fw-Sx9Kwc.uW2Fw-Sx9Kwc-OWXEXe-vOE8Lb.uW2Fw-Sx9Kwc-OWXEXe-di8rgd-bN97Pc-QFlW2.no1KDb.uW2Fw-Sx9Kwc-OWXEXe-FNFY6c > div.uW2Fw-wzTsW > div > div > div > div.SfvQgf > div.n2q0Vd > div:nth-child(2) > button"}
+  (Session info: chrome=129.0.6668.70)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1cfd177bbabdb26ff04c59010a0b4af9, findElement {value=#yDmH0d > div.uW2Fw-Sx9Kwc.uW2Fw-Sx9Kwc-OWXEXe-vOE8Lb.uW2Fw-Sx9Kwc-OWXEXe-di8rgd-bN97Pc-QFlW2.no1KDb.uW2Fw-Sx9Kwc-OWXEXe-FNFY6c > div.uW2Fw-wzTsW > div > div > div > div.SfvQgf > div.n2q0Vd > div:nth-child(2) > button, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\CARLOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59782}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59782/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1cfd177bbabdb26ff04c59010a0b4af9
+15:42:38.537 [main] INFO  ScreenshotOnFailureWatcher.class - f
+15:45:40.954 [main] DEBUG CalculatorTest.class - DEBUG: for gods sake
+15:45:40.995 [main] INFO  CalculatorTest.class - no sesion
+15:45:41.008 [main] ERROR ScreenshotOnFailureWatcher.class - Test failed: testCalculateEstimate() - expected: <5.897,94 $
+/ mo> but was: <5.376,79 $
+/ mo>
+15:48:49.360 [main] DEBUG CalculatorTest.class - DEBUG: for gods sake
+15:48:49.397 [main] INFO  CalculatorTest.class - no sesion
+15:48:49.413 [main] ERROR ScreenshotOnFailureWatcher.class - Test failed: testCalculateEstimate() - expected: <5.897,94 $
+/ mo> but was: <5.376,79 $
+/ mo>
+15:48:49.413 [main] INFO  ScreenshotOnFailureWatcher.class - Test failed: testCalculateEstimate() - expected: <5.897,94 $
+/ mo> but was: <5.376,79 $
+/ mo>
+15:52:02.084 [main] ERROR ScreenshotOnFailureWatcher.class - Test failed: testCalculateEstimate() - expected: <5.897,94 $
+/ mo> but was: <5.376,79 $
+/ mo>
+15:54:39.169 [main] ERROR ScreenshotOnFailureWatcher.class - Test failed: testCalculateEstimate() - no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="ow6"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[11]/div/div/div[2]/div/div[1]/div[3]/div/div/div/div[1]"}
+  (Session info: chrome=129.0.6668.70)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b7281a78f6c03c070ccbedf82ed56bc1, findElement {value=//*[@id="ow6"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[11]/div/div/div[2]/div/div[1]/div[3]/div/div/div/div[1], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\CARLOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59984}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59984/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b7281a78f6c03c070ccbedf82ed56bc1
+15:58:42.819 [main] ERROR ScreenshotOnFailureWatcher.class - Test failed: testCalculateEstimate() - no such element: Unable to locate element: {"method":"css selector","selector":"#yDmH0d > div.uW2Fw-Sx9Kwc.uW2Fw-Sx9Kwc-OWXEXe-vOE8Lb.uW2Fw-Sx9Kwc-OWXEXe-di8rgd-bN97Pc-QFlW2.no1KDb.uW2Fw-Sx9Kwc-OWXEXe-FNFY6c > div.uW2Fw-wzTsW > div > div > div > div.SfvQgf > div.n2q0Vd > div:nth-child(2) > button"}
+  (Session info: chrome=129.0.6668.70)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [dc1c7fdfca167d7e0281290c47625e53, findElement {value=#yDmH0d > div.uW2Fw-Sx9Kwc.uW2Fw-Sx9Kwc-OWXEXe-vOE8Lb.uW2Fw-Sx9Kwc-OWXEXe-di8rgd-bN97Pc-QFlW2.no1KDb.uW2Fw-Sx9Kwc-OWXEXe-FNFY6c > div.uW2Fw-wzTsW > div > div > div > div.SfvQgf > div.n2q0Vd > div:nth-child(2) > button, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\CARLOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60039}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60039/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: dc1c7fdfca167d7e0281290c47625e53
+16:00:21.185 [main] INFO  CalculatorTest.class - Cantidad 1 fue 5.287,17 $
+/ moy la dos: 4.822,00 $
+/ mo
+16:00:22.010 [main] ERROR ScreenshotOnFailureWatcher.class - Test failed: testCalculateEstimate() - expected: <5.287,17 $
+/ mo> but was: <4.822,00 $
+/ mo>

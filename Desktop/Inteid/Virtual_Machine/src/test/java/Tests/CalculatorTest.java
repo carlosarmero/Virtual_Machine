@@ -4,21 +4,18 @@ import PageObjects.Add;
 import PageObjects.CalculatorPage;
 import PageObjects.Home;
 import PageObjects.Search;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+
 
 @ExtendWith(ScreenshotOnFailureWatcher.class)
 public class CalculatorTest implements TestWatcher {
@@ -27,6 +24,9 @@ public class CalculatorTest implements TestWatcher {
     private Search searchResultsPage;
     private CalculatorPage calculatorPage;
     private Add AddOne;
+    String cant1;
+    String clipboardText;
+    static Logger log = (Logger) LogManager.getLogger("CalculatorTest.class");
     @BeforeEach
     public void setUp() {
         driver = new ChromeDriver();
@@ -51,10 +51,9 @@ public class CalculatorTest implements TestWatcher {
         //llenar form
         calculatorPage.fillComputeEngineForm();
         //obtener cantidad
-        String cant1 = driver.findElement(By.className("fbc2ib")).getText();
-        System.out.println(cant1);
+        cant1 = driver.findElement(By.className("fbc2ib")).getText();
         //intento copiar enlace
-        String clipboardText = CalculatorPage.getClipboardText();
+        clipboardText = CalculatorPage.getClipboardText();
         //cierro ventana actual
         //driver.close();
         //<-abro cotizaciotn
@@ -62,8 +61,10 @@ public class CalculatorTest implements TestWatcher {
         //obtrngo  cantiddad de nueva ventana
         String cant2 = driver.findElement(By.className("fbc2ib")).getText();
         //verifico que sean igual
+        log.info("Cantidad 1 fue " + cant1 + "y la dos: "+ cant2);
         Assertions.assertEquals(cant1, cant2);
     }
+
     @AfterEach
 
     public void tearDown() {

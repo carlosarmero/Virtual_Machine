@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
        <Configuration status="WARN" strict="true">
        <Properties>
-       <Property name="filename">C:/Users/carlos herrerra/Downloads/Logs.log</Property>
+       <Property name="filename">C:\Users\carlos herrerra\Desktop\Inteid\Virtual_Machine\src\test\java\Tests\logs\Logs.log</Property>
        </Properties>
        <Appenders>
        <Appender type="Console" name="STDOUT">
@@ -16,7 +16,7 @@
 
        <Loggers>
 
-       <Root level="debug">
+       <Root level="all">
        <AppenderRef ref="File"/>
        </Root>
        </Loggers>
