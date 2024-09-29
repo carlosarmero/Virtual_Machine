@@ -8,20 +8,20 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
 
-public class CalculatorTest {
+@ExtendWith(ScreenshotOnFailureWatcher.class)
+public class CalculatorTest implements TestWatcher {
     private WebDriver driver;
     private Home homePage;
     private Search searchResultsPage;
@@ -39,23 +39,15 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testCalculateEstimate() throws InterruptedException {
+    public void testCalculateEstimate(){
         //buscar palabras
         homePage.searchFor("Google Cloud Platform Pricing Calculator");
-        //establecer espera
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        //esperar al enlace a calculadora
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Google Cloud Pricing Calculator")));
         //click link
         searchResultsPage.selectCalculator();
-        //wait 1st add to estimate
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"ucj-1\"]/div/div/div/div/div/div/div/div[1]/div/div[1]/div/div/div/button")));
+        //1er add
         AddOne.AddOne();
         //esperar cuadro boton que dice compute engine
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"yDmH0d\"]/div[5]/div[2]/div/div/div/div[2]/div/div/div[1]/div/div/div/div/button")));
         AddOne.AddTwo();
-        //esperar que cargue el form
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("zv7tnb")));
         //llenar form
         calculatorPage.fillComputeEngineForm();
         //obtener cantidad
@@ -63,33 +55,14 @@ public class CalculatorTest {
         System.out.println(cant1);
         //intento copiar enlace
         String clipboardText = CalculatorPage.getClipboardText();
-
         //cierro ventana actual
         //driver.close();
-        driver.get(clipboardText);//<-abro cotizaciotn
+        //<-abro cotizaciotn
+        driver.get(clipboardText);
         //obtrngo  cantiddad de nueva ventana
         String cant2 = driver.findElement(By.className("fbc2ib")).getText();
         //verifico que sean igual
         Assertions.assertEquals(cant1, cant2);
-    }
-
-    @AfterEach
-
-    public void takeScreenshot() throws AWTException, IOException {
-        // Create a Robot instance
-        Robot robot = new Robot();
-
-        // Define the screen size for capture
-        Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
-
-        // Capture the screen
-        BufferedImage screenImage = robot.createScreenCapture(screenRect);
-
-        // Define the file path
-        String path = "C:\\Users\\carlos herrerra\\Downloads\\" + "fileName" + ".jpg";
-
-        // Save the screenshot
-        ImageIO.write(screenImage, "jpg", new File(path));
     }
     @AfterEach
 
