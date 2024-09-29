@@ -18,15 +18,14 @@ public class CalculatorPage {
     }
 
     public static String linkS;
-    public void fillComputeEngineForm() {
+    public void fillComputeEngineForm(int instances) {
         //esperar que cargue el form
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("zv7tnb")));
         //instances
-        //driver.findElement(By.cssSelector("#c22")).sendKeys("4");ok pero 14
-        driver.findElement(By.xpath("//*[@id=\"ucj-1\"]/div/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[2]/div/div/div/div/div[2]/div[1]/div[3]/div[3]/button")).click();
-        driver.findElement(By.xpath("//*[@id=\"ucj-1\"]/div/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[2]/div/div/div/div/div[2]/div[1]/div[3]/div[3]/button")).click();
-        driver.findElement(By.xpath("//*[@id=\"ucj-1\"]/div/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[2]/div/div/div/div/div[2]/div[1]/div[3]/div[3]/button")).click();
+        for (int i = 0; i < instances; i++) {
+            driver.findElement(By.xpath("//*[@id=\"ucj-1\"]/div/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[2]/div/div/div/div/div[2]/div[1]/div[3]/div[3]/button")).click();
+        }
         //baja---machine type
         driver.findElement(By. xpath("//*[@id=\"c44\"]"));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("VfPpkd-aPP78e")));

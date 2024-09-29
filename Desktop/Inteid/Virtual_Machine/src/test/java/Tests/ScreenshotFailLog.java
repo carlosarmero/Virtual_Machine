@@ -11,9 +11,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class ScreenshotOnFailureWatcher implements TestWatcher {
+public class ScreenshotFailLog implements TestWatcher {
 
-    static Logger log = (Logger) LogManager.getLogger("ScreenshotOnFailureWatcher.class");
+    static Logger log = (Logger) LogManager.getLogger("ScreenshotFailLog.class");
 
     @Override
     public void testFailed(ExtensionContext context, Throwable cause) {

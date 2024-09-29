@@ -17,7 +17,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-@ExtendWith(ScreenshotOnFailureWatcher.class)
+@ExtendWith(ScreenshotFailLog.class)
 public class CalculatorTest implements TestWatcher {
     private WebDriver driver;
     private Home homePage;
@@ -49,7 +49,7 @@ public class CalculatorTest implements TestWatcher {
         //esperar cuadro boton que dice compute engine
         AddOne.AddTwo();
         //llenar form
-        calculatorPage.fillComputeEngineForm();
+        calculatorPage.fillComputeEngineForm(5);
         //obtener cantidad
         cant1 = driver.findElement(By.className("fbc2ib")).getText();
         //intento copiar enlace
