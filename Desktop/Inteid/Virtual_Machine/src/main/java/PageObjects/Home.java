@@ -2,7 +2,6 @@ package PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 public class Home {
     private WebDriver driver;
 

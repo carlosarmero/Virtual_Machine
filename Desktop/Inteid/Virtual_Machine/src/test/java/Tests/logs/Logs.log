@@ -1,12 +1,17 @@
-17:19:44.478 [main] ERROR ScreenshotFailLog.class - Test failed: testCalculateEstimate() - no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="ow6"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[11]/div/div/div[2]/div/div[1]/div[3]/div/div/div/div[1]"}
-  (Session info: chrome=129.0.6668.70)
+14:02:13.540 [main] ERROR ScreenshotFailLog.class - Test failed: testCalculateEstimate() - no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="ow6"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[28]/div/div[1]/div/div"}
+  (Session info: chrome=129.0.6668.71)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c10ec082797a74812332af30f634918b, findElement {using=xpath, value=//*[@id="ow6"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[11]/div/div/div[2]/div/div[1]/div[3]/div/div/div/div[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.70, chrome: {chromedriverVersion: 129.0.6668.70 (df87d5cf12b1..., userDataDir: C:\Users\CARLOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60217}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60217/devtoo..., se:cdpVersion: 129.0.6668.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c10ec082797a74812332af30f634918b
-17:45:54.829 [main] INFO  CalculatorTest.class - Cantidad 1 fue 8.846,91 $
-/ moy la dos: 8.846,91 $
-/ mo
+Command: [ffd76935320e85ee27f04c1d24e02ae4, findElement {using=xpath, value=//*[@id="ow6"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[28]/div/div[1]/div/div}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.71, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\CARLOS~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49924}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49924/devtoo..., se:cdpVersion: 129.0.6668.71, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ffd76935320e85ee27f04c1d24e02ae4
+14:03:52.683 [main] ERROR ScreenshotFailLog.class - Test failed: testCalculateEstimate() - Unable to locate element: //*[@id="ow6"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[28]/div/div[1]/div/div
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [11200080-1580-4982-83ce-b8107d924a48, findElement {value=//*[@id="ow6"]/div/div/div/div/div/div/div[1]/div/div[2]/div[3]/div[28]/div/div[1]/div/div, using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 130.0.1, moz:accessibilityChecks: false, moz:buildID: 20240913135723, moz:debuggerAddress: 127.0.0.1:9572, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 6084, moz:profile: C:\Users\CARLOS~1\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:9572/devtool..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 11200080-1580-4982-83ce-b8107d924a48

@@ -1,9 +1,6 @@
 package Tests;
 
-import PageObjects.Add;
-import PageObjects.CalculatorPage;
-import PageObjects.Home;
-import PageObjects.Search;
+import PageObjects.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.junit.jupiter.api.AfterEach;
@@ -14,13 +11,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 @ExtendWith(ScreenshotFailLog.class)
-public class CalculatorTest implements TestWatcher {
+public class MozilaTest implements TestWatcher {
     private WebDriver driver;
-    private Home homePage;
+    private HomeMf homePage;
     private Search searchResultsPage;
     private CalculatorPage calculatorPage;
     private Add AddOne;
@@ -29,10 +26,10 @@ public class CalculatorTest implements TestWatcher {
     static Logger log = (Logger) LogManager.getLogger("CalculatorTest.class");
     @BeforeEach
     public void setUp() {
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get("https://cloud.google.com/");
-        homePage = new Home(driver);
+        homePage = new HomeMf(driver);
         searchResultsPage = new Search(driver);
         calculatorPage = new CalculatorPage(driver);
         AddOne = new Add(driver);
@@ -49,7 +46,7 @@ public class CalculatorTest implements TestWatcher {
         //esperar cuadro boton que dice compute engine
         AddOne.AddTwo();
         //llenar form
-        calculatorPage.fillComputeEngineForm(3);
+        calculatorPage.fillComputeEngineForm(1);
         //obtener cantidad
         cant1 = driver.findElement(By.className("fbc2ib")).getText();
         //intento copiar enlace
